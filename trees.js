@@ -12,6 +12,7 @@ class binarySearchTree{
         this.root = null;
     }
 
+    //insert node to binary search tree
     push(val){
         var newNode  = new Node(val);
         if(!this.root){
@@ -40,6 +41,33 @@ class binarySearchTree{
             }
         }
         return this;
+    }
+
+    //search node in binary search tree, return true or false.
+    find(val){
+        var current = this.root;
+        var newNode  = new Node(val);
+        if(this.root === null) return false;
+        if(this.root === val) return val;
+        else{
+            while(true){
+                if(val < current.value){
+                    if(current.left === null) return false;
+                    else{
+                        current = current.left;
+                    }       
+                }
+                else if(val > current.value){
+                    if(current.right === null) return false;
+                    else{
+                        current = current.right
+                    }
+                }
+                else{
+                    return true;
+                }
+            }
+        }
     }
 }
 

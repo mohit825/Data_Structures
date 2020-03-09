@@ -177,8 +177,56 @@ class linkedList {
         return this;
     }
 
+    // removeDuplicate(){
+    //     let curr = this.head;
 
+    //     for(let i = 1 ; i<=this.length; i++){
+           
+    //         let currPlusOne = curr.next;
+    //         for(let j = i+1; j<=this.length; j++){
+    //             console.log(curr, currPlusOne, "curr and currplusone")
+    //             if(curr.val === currPlusOne.val){
+    //                 console.log("match found, removing duplicate")
+    //                 this.remove(i);
+                    
+    //             }
+    //             else{
+    //                 console.log("no match");
+                    
+    //             }
+    //             currPlusOne = currPlusOne.next;
+    //         }
+    //         curr = curr.next;
+            
+    //     }
+    //     return this;
+    // }
+
+
+    // this will return the miidle node of linked list.
+    
+    middle(){
+        var curr = this.head;
+        if(this.length === 0) return null;
+        if(this.length === 1) return this.head;
+
+        else{
+                
+            var len = this.length;
+            var counter = Math.ceil(len/2);
+            let temp;
+            for(let i=0; i< counter; i++){
+                temp = curr;
+                curr = curr.next;
+
+            }
+            return temp;    
+        }
+    }
 
 }
 
 var list = new linkedList();
+list.push(3);
+list.push(4);
+list.push(5);
