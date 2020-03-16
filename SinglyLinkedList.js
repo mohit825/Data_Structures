@@ -224,9 +224,27 @@ class linkedList {
         }
     }
 
+    indexOf(value){
+        // console.log(this.head);
+        var current  = this.head;
+        var indexes = [];
+        var valObj = {};
+        var  n = 0;
+        while(current){
+           if(current.val === value){
+               indexes.push(n);
+           }
+            current = current.next;
+            n = n+1;
+        }
+        
+        
+        return indexes
+    }
 }
 
 var list = new linkedList();
 list.push(3);
 list.push(4);
 list.push(5);
+list.push(3)
